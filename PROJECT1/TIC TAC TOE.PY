@@ -42,7 +42,7 @@ def place_marker(board, marker, position):
         row, col = mapping[position]
         board[row][col] = marker
     else:
-        print("Invalid position. Please choose a valid position from 1 to 9.")
+        print("repeated Position")
 
 
 def win_check(board, mark):  #mark is X
