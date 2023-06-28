@@ -38,11 +38,12 @@ def player_input():
  #Or a more optimised code using mapping
 def place_marker(board, marker, position):
     mapping = {8: (2, 1), 5: (1, 1), 2: (0, 1), 7: (2, 0), 4: (1, 0), 1: (0, 0), 9: (2, 2), 6: (1, 2), 3: (0, 2)}
-    if position in mapping:
-        row, col = mapping[position]
+    row, col = mapping[position]
+    if board[row][col] == ' ':
         board[row][col] = marker
     else:
-        print("repeated Position")
+        print("Position already occupied. Choose a different position.")
+
 
 
 def win_check(board, mark):  #mark is X
@@ -74,10 +75,11 @@ def choose_first():
         return 'player 2'
     
 
-def space_check(board, position): #board 3*3, position no. suppose3
+'''#def space_check(board, position): #board 3*3, position no. suppose3
     mapping = {8: (2, 1), 5: (1, 1), 2: (0, 1), 7: (2, 0), 4: (1, 0), 1: (0, 0), 9: (2, 2), 6: (1, 2), 3: (0, 2)}
     row, col = mapping[position]
-    return board[row][col]== " "
+    return board[row][col]== " "  
+'''
 
             
     
@@ -90,11 +92,14 @@ def full_board_check(board):
     return True
     
 def player_choice(board):
-    
-    position= int(input("Enter your next position as(1-9): "))
-    free_pos= space_check(board, position)
-    if free_pos== True:
-        return position
+    check = True 
+    while check:
+       position= int(input("Enter your next position as(1-9): "))
+       if position in range(1,10):
+          return position 
+    #free_pos= space_check(board, position)
+    #if free_pos== True:
+        #return position
 
 def replay():
     check=False
@@ -103,7 +108,7 @@ def replay():
         if play_again=='YES'or play_again=='NO':
             check=True
 
-    return play_again.upper=='YES'
+    return play_again.upper()=='YES'
 
 
 #actual game setup
@@ -174,7 +179,6 @@ while True:
     reply= replay()
     
     if reply== True:
-        
         os.system("cls")
     else:
         break
