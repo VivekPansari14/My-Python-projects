@@ -1,0 +1,78 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#player-names {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#player-names label {
+    margin-right: 10px;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #f2f2f2;
+}
+
+#controls {
+    text-align: center;
+}
+
+button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+}
+
+#player1,
+#player2 {
+    width: 150px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+

@@ -125,11 +125,10 @@ while True:
     
     play_game= input('ready to play? Y or N?')
     
-    if play_game=='Y':
-        game_on= True
-    else:
-        game_on= False 
+    if play_game.upper() != 'Y':
+        break
 
+    game_on = True
 
     while game_on:
         if turn== 'player 1':
